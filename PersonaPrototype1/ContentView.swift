@@ -1,11 +1,3 @@
-//
-//  ContentView.swift
-//  PersonaPrototype1
-//
-//  Created by Jonghoo Hwang on 2020/04/19.
-//  Copyright © 2020 JongHoo. All rights reserved.
-//
-
 import SwiftUI
 
 struct ContentView: View {
@@ -13,24 +5,34 @@ struct ContentView: View {
  
     var body: some View {
         TabView(selection: $selection){
-            Text("First View")
+            Text("Main View")
                 .font(.title)
                 .tabItem {
                     VStack {
-                        Image("first")
-                        Text("First")
+                        Image(systemName: "house")
+                        Text("Home")
                     }
                 }
                 .tag(0)
-            Text("Second View")
+            
+            Text("Camera View")
                 .font(.title)
                 .tabItem {
                     VStack {
-                        Image("second")
-                        Text("Second")
+                        Image(systemName: "camera")
+                        Text("Find")
                     }
                 }
                 .tag(1)
+            
+            FriendList()
+                .tabItem {
+                    VStack {
+                        Image(systemName: "person.3")
+                        Text("Friends")
+                    }
+                }
+                .tag(2)
         }
     }
 }
